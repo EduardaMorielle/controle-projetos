@@ -1,0 +1,23 @@
+<div class="container">
+  <header>
+    <h1>Equipe</h1>
+    <p>Total: {{ total() }} membros</p>
+  </header>
+
+  @if (membros().length === 0) {
+    <div class="empty-state">
+      <mat-icon class="empty-icon">groups</mat-icon>
+      <h3>Sem membros</h3>
+    </div>
+  }
+
+  <section class="grid">
+    @for (membro of membros(); track membro.id) {
+      <app-membro-card
+        [nome]="membro.nome"
+        [email]="membro.email"
+        [cargo]="membro.cargo"
+        [projetos]="membro.projetos" />
+    }
+  </section>
+</div>

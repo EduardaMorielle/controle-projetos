@@ -1,0 +1,37 @@
+<mat-sidenav-container class="sidenav-container">
+  <!-- MENU LATERAL -->
+  <mat-sidenav mode="side" opened class="sidenav">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/" routerLinkActive="ativo">
+        <mat-icon>home</mat-icon>
+        <span>Início</span>
+      </a>
+      <a mat-list-item routerLink="/projetos" routerLinkActive="ativo">
+        <mat-icon>assignment</mat-icon>
+        <span>Projetos</span>
+      </a>
+      <a mat-list-item routerLink="/membros" routerLinkActive="ativo">
+        <mat-icon>groups</mat-icon>
+        <span>Membros</span>
+      </a>
+      <a mat-list-item routerLink="/relatorios" routerLinkActive="ativo">
+        <mat-icon>bar_chart</mat-icon>
+        <span>Relatórios</span>
+      </a>
+      <a mat-list-item routerLink="/sobre" routerLinkActive="ativo">
+        <mat-icon>info</mat-icon>
+        <span>Sobre</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <span>{{ title() }}</span>
+    </mat-toolbar>
+    <main class="conteudo">
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
